@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "BookapiApplication",
+            "request": "launch",
+            "mainClass": "com.api.book.bookapi.BookapiApplication",
+            "projectName": "bookapi"
+        },
+        {
+            "type": "java",
+            "name": "JpaApplication",
+            "request": "launch",
+            "mainClass": "com.jpa.test.JpaApplication",
+            "projectName": "jpa"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MyappApplication<myapp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.springboot.myapp.MyappApplication",
+            "projectName": "myapp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

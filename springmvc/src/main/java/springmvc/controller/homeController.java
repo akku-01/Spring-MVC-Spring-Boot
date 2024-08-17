@@ -81,7 +81,7 @@ public class homeController {
 //		return "";
 //	}
 	
-//	----------using RequestParam -------------
+//	----------using RequestParam -------------best hai 
 //	public String handleForm(@RequestParam("email") String email ,
 //							@RequestParam("password") String password ,
 //							@RequestParam("name") String name,Model model

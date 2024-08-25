@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org"
+th:replace="~{base::Layout(~{::section})}">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <section class="h-100 bg-dark">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card card-registration my-4">
+                <div class="row g-0">
+                  <div class="col-xl-5 d-none d-xl-block">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                      alt="Sample photo" class="img-fluid"
+                      style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="card-body p-md-5 text-black">
+                      <h3 class="mb-5 text-uppercase text-center">User registration form</h3>
+
+                      <form th:action="@{/registerit}" method="post" th:object="${user}">
+
+                      <div class="row">
+                        <div class="col-md-14 mb-4">
+                          <div data-mdb-input-init class="form-outline">
+                            <label class="form-label" for="name">Name</label>
+                            <input name="name" placeholder="Your name" type="text" id="name" class="form-control form-control-lg" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-14 mb-4">
+                          <div data-mdb-input-init class="form-outline">
+                            <label class="form-label" for="email">Email</label>
+                            <input name="email" placeholder="Your Email Id" type="email" id="email" class="form-control form-control-lg" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-14 mb-4">
+                          <div data-mdb-input-init class="form-outline">
+                            <label class="form-label" for="password">Password</label>
+                            <input name="password" placeholder="Your Password" type="text" id="password" class="form-control form-control-lg" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-14 mb-4">
+                          <div data-mdb-input-init class="form-outline">
+                            <label class="form-label" for="desc">Description</label>
+                            <textarea name="about" placeholder="Write something about you..." class="form-control" id="desc" rows="5"></textarea>
+                            <!-- <input type="text" id="form3Example1m" class="form-control form-control-lg" /> -->
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-14 mb-4">
+                          <div data-mdb-input-init class="form-outline">
+                            <input name="check" type="checkbox" id="check" class="form-check-input" />
+                            <label class="form-check-label" for="check">I do accept the terms and conditions of your
+                                site.</label>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="d-flex justify-content-end pt-3">
+                        <button  type="button"  data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">Reset all</button>
+                        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-warning btn-lg ms-2">Submit form</button>
+                      </div>
+
+                    </form>
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+</body>
+</html>

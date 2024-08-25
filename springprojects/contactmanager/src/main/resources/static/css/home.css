@@ -1,0 +1,35 @@
+
+body{
+    background-image: url("/images/imageasset.jpg");
+    background-repeat: no-repeat;
+    background-size: cover ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+nav{
+  /* color: #E1B9C4; */
+  background-color: #E1B9C4;
+}
+.navbar-brand{
+  margin-left: 20px;
+}
+.maincontent{
+  /* display: block; */
+  /* display: flex; */
+  text-align: center;
+  margin-top:19%;
+  justify-content: center;
+  align-items: center;
+}
+.btn.btn-light{
+  /* color: #E1B9C4; */
+  background-color: #E1B9C4 !important;;
+}
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+  }
+  .card-registration .select-arrow {
+  top: 13px;
+  }

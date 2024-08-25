@@ -2,10 +2,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ContactmanagerApplication",
+            "request": "launch",
+            "mainClass": "com.cntmgr.contactmanager.ContactmanagerApplication",
+            "projectName": "contactmanager"
+        },
+        {
+            "type": "java",
             "name": "BookapiApplication",
             "request": "launch",
             "mainClass": "com.api.book.bookapi.BookapiApplication",
-            "projectName": "bookapi"
+            "projectName": "bookapi",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=55001 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=bookapi"
         },
         {
             "type": "java",
@@ -21,6 +29,16 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.springboot.myapp.MyappApplication",
             "projectName": "myapp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<demo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.demo.DemoApplication",
+            "projectName": "demo",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }

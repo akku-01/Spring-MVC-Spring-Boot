@@ -10,6 +10,6 @@ import com.cntmgr.contactmanager.entities.User;
 public interface UserRepo extends JpaRepository<User,Integer>{
     public void findById(int id);
 
-    @Query("select u from User u where u.email = : email")
+    @Query("select u from User u where u.email = :email")
     public User getUserByUserName(@Param("email") String email);
 }

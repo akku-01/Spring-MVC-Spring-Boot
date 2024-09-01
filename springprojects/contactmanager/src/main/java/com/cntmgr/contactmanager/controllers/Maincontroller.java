@@ -1,8 +1,10 @@
 package com.cntmgr.contactmanager.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,10 @@ import com.cntmgr.contactmanager.helper.Message;
 
 @Controller
 public class Maincontroller {
+
+    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
+
     @Autowired
     private UserRepo userRepo;
 
@@ -42,11 +48,10 @@ public class Maincontroller {
             if (!check) {
                 throw new Exception("You have not agreed with terms and conditions!");
             }
-            System.out.println(user);
-            System.out.println(check);
-            System.out.println("1");
             m.addAttribute("message", new Message("Successfully registered!","alert-success" ));
-            System.out.println("2");
+            user.setRole("ROLE_USER");
+            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+            user.setEnabled(true);
             userRepo.save(user);
             return "signup";
         }catch(Exception e){
@@ -54,7 +59,10 @@ public class Maincontroller {
             m.addAttribute("message", new Message("Something went wrong! "+e.getMessage(),"alert-danger" ));
             return "signup";
         }
-        
-        
+    }
+
+    @GetMapping("/signin")
+    public String customlogin(Model m){
+        return "login";
     }
 }
